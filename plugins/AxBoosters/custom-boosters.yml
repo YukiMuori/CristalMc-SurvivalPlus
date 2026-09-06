@@ -1,0 +1,423 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axboosters.html
+
+# READ BEFORE EDITING:
+# in this file you can create custom boosters for any external plugin straight here without any programming required
+# note that a good understanding of the bukkit api is recommended before touching this file,
+# so most people probably should leave this as it is
+
+# how it works?
+# the plugin uses the java reflection api to create a listener for all the configured booster event classes
+# - the name of the section (for example: vanilla:experience) is the internal name of the booster, you can give it any name that you like (!! it must be all in lowercase, and it must follow the convention: <plugin-name>:<booster-name>)
+# - icon: the icon material shown in the /axboosteradmin editor
+# - event: the full path to the event class (this class must be extending the org.bukkit.event.Event class!)
+# - player: the method to get the Player object (the plugin can also transform UUID and OfflinePlayer automatically) from the event (you can also get them from subclasses, for example if you use "event.getUser().getPlayer()", here you can set it to "getUser.getPlayer")
+# - getter: the method to get the value to change (the method must not have any parameters and the return value must be a type of something that extends the Number class - so for example a double or a long)
+# - setter: the method to set the updated value (the method must have only 1 parameter, which extends the Number class)
+#
+# if you need an example, check out the "axsellwands:sell_money" booster here and its code (https://github.com/Artillex-Studios/AxSellwands/blob/master/src/main/java/com/artillexstudios/axsellwands/api/events/AxSellwandsSellEvent.java)
+
+# good to know:
+# - AxBoosters will check on startup to see if the event class exists, if it doesn't, you won't be able to see the booster hook
+# - some external plugin events are not possible to add as boosters if they don't have api events or if they are too complicated for this simple system
+# - you are responsible for testing all the booster hooks that you add, some plugins can have exploits if you are not careful (usually economy plugins with a pay command or shops)
+# - the default configuration contains some commented out booster hooks, but they are also supported, however due to some limitation this system doesn't work for them and they had to be added into the code directly
+
+# ==================
+#  VANILLA BOOSTERS
+# ==================
+
+vanilla:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: org.bukkit.event.player.PlayerExpChangeEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+# ===================
+#  EXTERNAL BOOSTERS
+# ===================
+
+ecoskills:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: com.willfp.ecoskills.api.event.PlayerSkillXPGainEvent
+  player: getPlayer
+  getter: getGainedXP
+  setter: setGainedXP
+
+jobsreborn:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: com.gamingmesh.jobs.api.JobsExpGainEvent
+  player: getPlayer
+  getter: getExp
+  setter: setExp
+
+jobsreborn:money:
+  icon: GOLD_INGOT
+  event: com.gamingmesh.jobs.api.JobsPrePaymentEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+jobsreborn:points:
+  icon: DIAMOND
+  event: com.gamingmesh.jobs.api.JobsPrePaymentEvent
+  player: getPlayer
+  getter: getPoints
+  setter: setPoints
+
+rivalharvesterhoes:essence:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.harvesterhoes.api.events.HoeEssenceReceiveEnchantEvent
+  player: getPlayer
+  getter: getEssence
+  setter: setEssence
+
+rivalharvesterhoes:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.harvesterhoes.api.events.HoeXPGainEvent
+  player: getPlayer
+  getter: getXP
+  setter: setXP
+
+rivalmobswords:essence:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.mobsword.rivalmobswords.api.SwordEssenceReceiveEnchantEvent
+  player: getPlayer
+  getter: getEssence
+  setter: setEssence
+
+rivalmobswords:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.mobsword.rivalmobswords.api.SwordXPGainEvent
+  player: getPlayer
+  getter: getXP
+  setter: setXP
+
+rivalpickaxes:essence:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.pickaxes.api.events.PickaxeEssenceReceiveEnchantEvent
+  player: getPlayer
+  getter: getEssence
+  setter: setEssence
+
+rivalpickaxes:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.pickaxes.api.events.PickaxeXPGainEvent
+  player: getPlayer
+  getter: getXP
+  setter: setXP
+
+rivalfishingrods:essence:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.fishingrod.rivalfishingrods.api.RodEssenceReceiveEvent
+  player: getPlayer
+  getter: getEssence
+  setter: setEssence
+
+rivalfishingrods:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: me.rivaldev.fishingrod.rivalfishingrods.api.RodXPGainEvent
+  player: getPlayer
+  getter: getXP
+  setter: setXP
+
+# "alonsolevels:experience":
+# icon: "EXPERIENCE_BOTTLE"
+# event: "com.alonsoaliaga.alonsolevels.api.events.ExperienceChangeEvent"
+# player: "getPlayer"
+# getter: ""
+# setter: ""
+
+auraskills:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: dev.aurelium.auraskills.api.event.skill.XpGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+aureliumskills:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: com.archyx.aureliumskills.api.event.XpGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axgens:sell_money:
+  icon: GOLD_INGOT
+  event: com.artillexstudios.axgens.api.events.ItemSellEvent
+  player: getPlayer
+  getter: getMoney
+  setter: setMoney
+
+axmobcoins:mobcoin:
+  icon: SUNFLOWER
+  event: com.artillexstudios.axmobcoins.api.events.AxMobCoinGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axsellchest:sell_money:
+  icon: GOLD_INGOT
+  event: com.artillexstudios.axsellchest.event.AxSellchestSellEvent
+  player: chest.getOwner.getPlayer
+  getter: amount
+  setter: setAmount
+
+axsellwands:sell_money:
+  icon: GOLD_INGOT
+  event: com.artillexstudios.axsellwands.api.events.AxSellwandsSellEvent
+  player: getPlayer
+  getter: getMoneyMade
+  setter: setMoneyMade
+
+battlepass:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: io.github.battlepass.api.events.user.UserQuestProgressionEvent
+  player: getUser.getPlayer
+  getter: getAddedProgress
+  setter: setAddedProgress
+
+cmi:sell_money:
+  icon: GOLD_INGOT
+  event: com.Zrips.CMI.events.CMIPlayerItemsSellEvent
+  player: getPlayer
+  getter: getTotalPayment
+  setter: setTotalPayment
+
+cyberlevels:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: net.zerotoil.dev.cyberlevels.api.events.XPChangeEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+deluxesellwands:sell_money:
+  icon: GOLD_INGOT
+  event: dev.norska.dsw.api.DeluxeSellwandSellEvent
+  player: getPlayer
+  getter: getMoney
+  setter: setMoney
+
+ecojobs:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: com.willfp.ecojobs.api.event.PlayerJobExpGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+# "economyshopgui:sell_money":
+# icon: "GOLD_INGOT"
+# event: "me.gypopo.economyshopgui.api.events.PreTransactionEvent"
+# player: "getPlayer"
+# getter: ""
+# setter: ""
+
+ecoshop:sell_money:
+  icon: GOLD_INGOT
+  event: com.willfp.ecoshop.event.EcoShopSellEvent
+  player: getPlayer
+  getter: getMultiplier
+  setter: setMultiplier
+
+# "essentials:sell_money":
+# icon: "GOLD_INGOT"
+# event: "net.ess3.api.events.UserBalanceUpdateEvent"
+# player: "getPlayer"
+# getter: ""
+# setter: ""
+
+mcmmo:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: com.gmail.nossr50.events.experience.McMMOPlayerXpGainEvent
+  player: getPlayer
+  getter: getRawXpGained
+  setter: setRawXpGained
+
+mmocore:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: net.Indyuce.mmocore.api.event.PlayerExperienceGainEvent
+  player: getPlayer
+  getter: getExperience
+  setter: setExperience
+
+playerpoints:point_change:
+  icon: GOLD_INGOT
+  event: org.black_ixx.playerpoints.event.PlayerPointsChangeEvent
+  player: getPlayerId
+  getter: getChange
+  setter: setChange
+
+sellwand:sell_money:
+  icon: GOLD_INGOT
+  event: me.zachary.sellwand.api.events.SellwandSellEvent
+  player: getPlayer
+  getter: getSellPrice
+  setter: setSellPrice
+
+shopguiplus:sell_money:
+  filter:
+    getShopAction:
+    - SELL
+    - SELL_ALL
+  icon: GOLD_INGOT
+  event: net.brcdev.shopgui.event.ShopPreTransactionEvent
+  player: getPlayer
+  getter: getPrice
+  setter: setPrice
+
+supermobcoins:mobcoin:
+  icon: SUNFLOWER
+  event: me.swanis.mobcoins.events.MobCoinsReceiveEvent
+  player: getProfile.getPlayer
+  getter: getAmount
+  setter: setAmount
+
+tmmobcoins:mobcoin:
+  icon: SUNFLOWER
+  event: me.swanis.mobcoins.events.MobCoinsReceiveEvent
+  player: getProfile.getPlayer
+  getter: getAmount
+  setter: setAmount
+
+ultimatemobcoins:mobcoin:
+  icon: SUNFLOWER
+  event: nl.chimpgamer.ultimatemobcoins.paper.events.MobCoinsReceiveEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+valhallammo:experience:
+  icon: EXPERIENCE_BOTTLE
+  event: me.athlaeos.valhallammo.events.PlayerSkillExperienceGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+wildchests:sell_money:
+  icon: GOLD_INGOT
+  event: com.bgsoftware.wildchests.api.events.SellChestTaskEvent
+  player: getChest.getPlacer
+  getter: getMultiplier
+  setter: setMultiplier
+
+axspawners:sell_money:
+  icon: SPAWNER
+  event: com.artillexstudios.axspawners.api.events.AxSpawnersLootSellEvent
+  player: getSpawner.getOwner
+  getter: getMoney
+  setter: setMoney
+
+axspawners:xp_withdraw:
+  icon: SPAWNER
+  event: com.artillexstudios.axspawners.api.events.AxSpawnersXPWithdrawEvent
+  player: getSpawner.getOwner
+  getter: getXp
+  setter: setXp
+
+axspawners:xp_generate:
+  icon: SPAWNER
+  event: com.artillexstudios.axspawners.api.events.AxSpawnersXPGenerateEvent
+  player: getSpawner.getOwner
+  getter: getXp
+  setter: setXp
+
+axhoes:essence_gain:
+  icon: NETHERITE_HOE
+  event: com.artillexstudios.axhoes.api.events.EssenceGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axhoes:money_gain:
+  icon: NETHERITE_HOE
+  event: com.artillexstudios.axhoes.api.events.MoneyGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axhoes:player_xp_gain:
+  icon: NETHERITE_HOE
+  event: com.artillexstudios.axhoes.api.events.PlayerXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axhoes:tool_xp_gain:
+  icon: NETHERITE_HOE
+  event: com.artillexstudios.axhoes.api.events.ToolXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axpickaxes:essence_gain:
+  icon: NETHERITE_PICKAXE
+  event: com.artillexstudios.axpickaxes.api.events.EssenceGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axpickaxes:money_gain:
+  icon: NETHERITE_PICKAXE
+  event: com.artillexstudios.axpickaxes.api.events.MoneyGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axpickaxes:player_xp_gain:
+  icon: NETHERITE_PICKAXE
+  event: com.artillexstudios.axpickaxes.api.events.PlayerXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axpickaxes:tool_xp_gain:
+  icon: NETHERITE_PICKAXE
+  event: com.artillexstudios.axpickaxes.api.events.ToolXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axshovels:essence_gain:
+  icon: NETHERITE_SHOVEL
+  event: com.artillexstudios.axshovels.api.events.EssenceGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axshovels:money_gain:
+  icon: NETHERITE_SHOVEL
+  event: com.artillexstudios.axshovels.api.events.MoneyGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axshovels:player_xp_gain:
+  icon: NETHERITE_SHOVEL
+  event: com.artillexstudios.axshovels.api.events.PlayerXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axshovels:tool_xp_gain:
+  icon: NETHERITE_SHOVEL
+  event: com.artillexstudios.axshovels.api.events.ToolXPGainEvent
+  player: getPlayer
+  getter: getAmount
+  setter: setAmount
+
+axsellchests:sell_money:
+  icon: GOLD_INGOT
+  event: com.artillexstudios.axsellchests.api.events.AxSellChestsSellEvent
+  player: getChest.getOwner
+  getter: getMoney
+  setter: setMoney
+
+nextgens:sell_money:
+  icon: GOLD_INGOT
+  event: com.muhammaddaffa.nextgens.api.events.sell.SellEvent
+  player: getPlayer
+  getter: getMultiplier
+  setter: setMultiplier
+
+# do not change
+version: 6

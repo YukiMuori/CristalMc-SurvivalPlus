@@ -1,0 +1,41 @@
+title: "View mode settings"
+size: 27
+
+items:
+  viewer_mode:
+    slot: 13
+    material: diamond
+    name: "#e1c4eeCambia quien puede ver este waypoint"
+    lore:
+      - ""
+      - "&7Modo: &e%waypoint_view_mode%"
+      - "&7Permiso: &e%waypoint_view_permission%"
+      - "&7Rango: &e%waypoint_view_rank%"
+      - ""
+      - "&a[Click para cambiar]"
+
+  view_permission:
+    slot: 22
+    material: name_tag
+    name: "#e1c4eeModo por permiso"
+    lore:
+      - ""
+      - "&7Permiso: &e%waypoint_view_permission%"
+      - ""
+      - "&a[Click para asignar un permiso]"
+
+  view_rank:
+    slot: 22
+    material: name_tag
+    name: "#e1c4eeModo por rango"
+    lore:
+      - ""
+      - "&7Rango: &e%waypoint_view_permission%"
+      - ""
+      - "&a[Click para asignar un rango"
+
+  fill:
+    slot: "0-26"
+    material: black_stained_glass_pane
+    name: "&c"
+    tooltip: false

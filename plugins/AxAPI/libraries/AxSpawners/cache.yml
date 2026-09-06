@@ -1,0 +1,70 @@
+libraries:
+- artifact-id: axapi
+  transitive-dependencies: []
+  classifier: all
+  version: 2.2.0-DEV-ITEMS-31
+  group: com.artillexstudios.axapi.nms.v26_2
+- artifact-id: BCommons
+  transitive-dependencies: []
+  classifier: null
+  version: 1.4.2
+  group: com.artillexstudios.bcommons
+- artifact-id: HikariCP
+  transitive-dependencies:
+  - artifact-id: slf4j-api
+    transitive-dependencies: []
+    classifier: ''
+    version: 2.0.17
+    group: org.slf4j
+  classifier: null
+  version: 7.1.0
+  group: com.zaxxer
+- artifact-id: h2
+  transitive-dependencies: []
+  classifier: null
+  version: 2.1.214
+  group: com.h2database
+- artifact-id: jdbi3-core
+  transitive-dependencies: []
+  classifier: null
+  version: 3.54.0
+  group: org.jdbi
+- artifact-id: commons-math3
+  transitive-dependencies: []
+  classifier: null
+  version: 3.6.1
+  group: org.apache.commons
+- artifact-id: caffeine
+  transitive-dependencies:
+  - artifact-id: jspecify
+    transitive-dependencies: []
+    classifier: ''
+    version: 1.0.0
+    group: org.jspecify
+  - artifact-id: error_prone_annotations
+    transitive-dependencies: []
+    classifier: ''
+    version: 2.43.0
+    group: com.google.errorprone
+  classifier: null
+  version: 3.2.3
+  group: com.github.ben-manes.caffeine
+
+relocations:
+- from: org.apache.commons.math3
+  to: com.artillexstudios.axspawners.libs.axapi.libs.math3
+- from: com.github.benmanes
+  to: com.artillexstudios.axspawners.libs.axapi.libs.caffeine
+- from: com.artillexstudios.axapi
+  to: com.artillexstudios.axspawners.libs.axapi
+- from: com.artillexstudios.bcommons
+  to: com.artillexstudios.axspawners.libs.bcommons
+- from: com.zaxxer.hikari
+  to: com.artillexstudios.axspawners.libs.hikari
+- from: org.jdbi
+  to: com.artillexstudios.axspawners.libs.jdbi
+
+repositories:
+- https://repo.artillex-studios.com/releases/
+- https://repo2.artillex-studios.com/releases/
+- https://repo1.maven.org/maven2/

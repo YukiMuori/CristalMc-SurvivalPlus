@@ -1,0 +1,275 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axboosters.html
+
+team-hooks: []
+
+booster-hooks:
+  vanilla:experience:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00experience'
+  axgens:sell_money:
+    enabled: true
+    display-name: '&#00FFFFaxgens&f:&#00FF00sell_money'
+  cmi:sell_money:
+    enabled: true
+    display-name: '&#00FFFFcmi&f:&#00FF00sell_money'
+  axspawners:sell_money:
+    enabled: true
+    display-name: '&#00FFFFaxspawners&f:&#00FF00sell_money'
+  axspawners:xp_withdraw:
+    enabled: true
+    display-name: '&#00FFFFaxspawners&f:&#00FF00xp_withdraw'
+  axspawners:xp_generate:
+    enabled: true
+    display-name: '&#00FFFFaxspawners&f:&#00FF00xp_generate'
+  vanilla:damage:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00damage'
+  vanilla:flyspeed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00flyspeed'
+  vanilla:flight:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00flight'
+  vanilla:attribute_fall_damage_multiplier:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_fall_damage_multiplier'
+  vanilla:attribute_follow_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_follow_range'
+  vanilla:attribute_spawn_reinforcements:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_spawn_reinforcements'
+  vanilla:attribute_attack_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_attack_speed'
+  vanilla:attribute_movement_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_movement_speed'
+  vanilla:attribute_entity_interaction_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_entity_interaction_range'
+  vanilla:attribute_max_health:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_max_health'
+  vanilla:attribute_sweeping_damage_ratio:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_sweeping_damage_ratio'
+  vanilla:attribute_submerged_mining_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_submerged_mining_speed'
+  vanilla:attribute_flying_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_flying_speed'
+  vanilla:attribute_oxygen_bonus:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_oxygen_bonus'
+  vanilla:attribute_bounciness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_bounciness'
+  vanilla:attribute_friction_modifier:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_friction_modifier'
+  vanilla:attribute_luck:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_luck'
+  vanilla:attribute_armor_toughness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_armor_toughness'
+  vanilla:attribute_gravity:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_gravity'
+  vanilla:attribute_below_name_distance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_below_name_distance'
+  vanilla:attribute_camera_distance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_camera_distance'
+  vanilla:attribute_burning_time:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_burning_time'
+  vanilla:attribute_max_absorption:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_max_absorption'
+  vanilla:attribute_movement_efficiency:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_movement_efficiency'
+  vanilla:attribute_attack_knockback:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_attack_knockback'
+  vanilla:attribute_sneaking_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_sneaking_speed'
+  vanilla:attribute_knockback_resistance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_knockback_resistance'
+  vanilla:attribute_armor:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_armor'
+  vanilla:attribute_air_drag_modifier:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_air_drag_modifier'
+  vanilla:attribute_mining_efficiency:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_mining_efficiency'
+  vanilla:attribute_safe_fall_distance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_safe_fall_distance'
+  vanilla:attribute_block_interaction_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_block_interaction_range'
+  vanilla:attribute_jump_strength:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_jump_strength'
+  vanilla:attribute_water_movement_efficiency:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_water_movement_efficiency'
+  vanilla:attribute_block_break_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_block_break_speed'
+  vanilla:attribute_waypoint_transmit_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_waypoint_transmit_range'
+  vanilla:attribute_waypoint_receive_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_waypoint_receive_range'
+  vanilla:attribute_attack_damage:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_attack_damage'
+  vanilla:attribute_tempt_range:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_tempt_range'
+  vanilla:attribute_name_tag_distance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_name_tag_distance'
+  vanilla:attribute_explosion_knockback_resistance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_explosion_knockback_resistance'
+  vanilla:attribute_step_height:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_step_height'
+  vanilla:attribute_scale:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00attribute_scale'
+  vanilla:potion_fire_resistance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_fire_resistance'
+  vanilla:potion_water_breathing:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_water_breathing'
+  vanilla:potion_jump_boost:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_jump_boost'
+  vanilla:potion_saturation:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_saturation'
+  vanilla:potion_health_boost:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_health_boost'
+  vanilla:potion_night_vision:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_night_vision'
+  vanilla:potion_weakness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_weakness'
+  vanilla:potion_wind_charged:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_wind_charged'
+  vanilla:potion_breath_of_the_nautilus:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_breath_of_the_nautilus'
+  vanilla:potion_wither:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_wither'
+  vanilla:potion_mining_fatigue:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_mining_fatigue'
+  vanilla:potion_slow_falling:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_slow_falling'
+  vanilla:potion_raid_omen:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_raid_omen'
+  vanilla:potion_luck:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_luck'
+  vanilla:potion_strength:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_strength'
+  vanilla:potion_infested:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_infested'
+  vanilla:potion_poison:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_poison'
+  vanilla:potion_hero_of_the_village:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_hero_of_the_village'
+  vanilla:potion_unluck:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_unluck'
+  vanilla:potion_invisibility:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_invisibility'
+  vanilla:potion_absorption:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_absorption'
+  vanilla:potion_slowness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_slowness'
+  vanilla:potion_haste:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_haste'
+  vanilla:potion_weaving:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_weaving'
+  vanilla:potion_glowing:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_glowing'
+  vanilla:potion_bad_omen:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_bad_omen'
+  vanilla:potion_dolphins_grace:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_dolphins_grace'
+  vanilla:potion_levitation:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_levitation'
+  vanilla:potion_conduit_power:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_conduit_power'
+  vanilla:potion_blindness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_blindness'
+  vanilla:potion_instant_damage:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_instant_damage'
+  vanilla:potion_nausea:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_nausea'
+  vanilla:potion_instant_health:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_instant_health'
+  vanilla:potion_regeneration:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_regeneration'
+  vanilla:potion_hunger:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_hunger'
+  vanilla:potion_speed:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_speed'
+  vanilla:potion_trial_omen:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_trial_omen'
+  vanilla:potion_darkness:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_darkness'
+  vanilla:potion_oozing:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_oozing'
+  vanilla:potion_resistance:
+    enabled: true
+    display-name: '&#00FFFFvanilla&f:&#00FF00potion_resistance'
+
+# do not change
+version: 1

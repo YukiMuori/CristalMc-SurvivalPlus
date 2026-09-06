@@ -1,0 +1,26 @@
+no_permission: "&cYou don''t have permission to do that."
+
+share_message:
+  request: "&e%sender_name% &7wants to share a waypoint with you. Do you want to accept it?"
+  accept_button: " &7[&a✔&7]"
+  deny_button: " &7[&c✖&7]"
+
+share_sent: "&aShare request sent to %receiver_name%."
+
+share_accepted:
+  sender: "&a%receiver_name% accepted the waypoint."
+  receiver: "&aYou accepted the shared waypoint."
+
+share_denied:
+  sender: "&c%receiver_name% denied your waypoint."
+  receiver: "&eYou denied the shared waypoint."
+
+already_shared: "&cYou have already sent a share request to this player."
+
+invalid_usage: "&cInvalid usage"
+
+no_longer_online: "&cThe player is no longer online."
+
+no_share_request: "&cNo share request from that player."
+
+shared_position: "&ePosition shared."

@@ -1,0 +1,47 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axgens.html
+
+# you can create as many sell wands as you want
+sellwands:
+  normal:
+    item:
+      material: STICK
+      name: '&#FFCC00&lsᴇʟʟᴡᴀɴᴅ &7(100%)'
+      lore:
+      - ''
+      - '&#FFCC00ɪɴғᴏ'
+      - ' &8❙ &fMultiplier: &#FFCC00%multiplier%x'
+      - ' &8❙ &fUses: &#FFCC00%uses%/%max-uses%'
+      - ''
+      - '&#FFCC00sᴛᴀᴛs'
+      - ' &8❙ &fSold items: &#FFCC00%sold-amount%'
+      - ' &8❙ &fMoney made: &#FFCC00%sold-price%$'
+      - ''
+      - '&#FFCC00&l(!) &#FFCC00Right click on a container to sell!'
+    multiplier: 1.0
+    # set to -1 to make it infinite
+    uses: 100
+    # how often should the player be able to sell
+    cooldown-miliseconds: 0
+  op:
+    item:
+      material: BLAZE_ROD
+      name: '&#FF6600&lsᴇʟʟᴡᴀɴᴅ &7(150%)'
+      lore:
+      - ''
+      - '&#FF6600ɪɴғᴏ'
+      - ' &8❙ &fMultiplier: &#FF6600%multiplier%x'
+      - ' &8❙ &fUses: &#FF6600%uses%/%max-uses%'
+      - ''
+      - '&#FF6600sᴛᴀᴛs'
+      - ' &8❙ &fSold items: &#FF6600%sold-amount%'
+      - ' &8❙ &fMoney made: &#FF6600%sold-price%$'
+      - ''
+      - '&#FF6600&l(!) &#FF6600Right click on a container to sell!'
+    multiplier: 1.5
+    # set to -1 to make it infinite
+    uses: 500
+    # how often should the player be able to sell
+    cooldown-miliseconds: 0
+
+# do not change this
+version: 1
