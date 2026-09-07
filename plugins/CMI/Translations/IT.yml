@@ -1,0 +1,133 @@
+# ============================================
+# CMI Minimal Italian Messages for Survival+
+# Using MiniMessage format with HEX colors and clickable buttons
+# ============================================
+
+# General
+NoPermission: '<red>Non hai il permesso per eseguire questo comando!'
+NoPermissionNode: '<red>Permesso richiesto: <white>%permission%'
+UnknownCommand: '<gray>Comando sconosciuto. Usa <white>/cmi help'
+OnlyPlayers: '<red>Solo i giocatori possono eseguire questo comando!'
+ConsoleOnly: '<red>Solo la console può eseguire questo comando!'
+CommandUsage: '<red>Uso: <white>%usage%'
+TooManyArguments: '<red>Troppi argomenti!'
+NotEnoughArguments: '<red>Non abbastanza argomenti!'
+InvalidNumber: '<red>Numero non valido!'
+InvalidItem: '<red>Oggetto non valido!'
+InvalidMaterial: '<red>Materiale non valido!'
+InvalidWorld: '<red>Mondo non valido!'
+InvalidPlayer: '<red>Giocatore non valido!'
+PlayerNotFound: '<red>Giocatore <white>%player% <red>non trovato!'
+PlayerOffline: '<red>Giocatore <white>%player% <red>è offline!'
+
+# Login/Logout
+JoinMessage: '<#2ecc71>[+] <white>%playerDisplayName%'
+QuitMessage: '<#e74c3c>[-] <white>%playerDisplayName%'
+FirstJoinMessage: '<gold>✨ Benvenuto <white>%playerDisplayName% <gold>in Survival+! ✨'
+
+# Teleport Messages
+TeleportedToPlayer: '<green>Teletrasportato da <white>%player%'
+TeleportedPlayerToYou: '<green>Hai teletrasportato <white>%player% <green>da te'
+TeleportedPlayerToPlayer: '<green>Hai teletrasportato <white>%player1% <green>da <white>%player2%'
+
+# TPA Messages (with clickable buttons)
+TeleportRequest: '<#3498db>%playerDisplayName% <white>vorrebbe venire da te! <#3498db>[<hover:show_text:"<green>Clicca per accettare">Accetta<click:run_command:/tpaccept>] <#e74c3c>[<hover:show_text:"<red>Clicca per rifiutare">Rifiuta<click:run_command:/tpdeny>]'
+TeleportRequestSent: '<green>Richiesta di teletrasporto inviata a <white>%player%'
+TeleportRequestAccepted: '<green>Richiesta di teletrasporto accettata da <white>%player%'
+TeleportRequestDenied: '<red>Richiesta di teletrasporto rifiutata da <white>%player%'
+
+# TPA Here Messages
+TeleportHereRequest: '<#3498db>%playerDisplayName% <white>vuole che tu vada da lui! <#3498db>[<hover:show_text:"<green>Clicca per accettare">Accetta<click:run_command:/tpaccept>] <#e74c3c>[<hover:show_text:"<red>Clicca per rifiutare">Rifiuta<click:run_command:/tpdeny>]'
+TeleportHereRequestSent: '<green>Richiesta inviata a <white>%player% <green>per farti venire da lui'
+
+# Teleport Warmup
+TeleportWarmup: '<yellow>Teletrasporto in corso tra <white>%seconds% <yellow>secondi...'
+TeleportCancelled: '<red>Teletrasporto annullato!'
+TeleportFailed: '<red>Impossibile teletrasportarsi in una posizione sicura!'
+TeleportNoMove: '<red>Non muoverti durante il teletrasporto!'
+
+# Home Messages
+HomeSet: '<green>Home <white>%home% <green>impostata!'
+HomeRemoved: '<red>Home <white>%home% <red>rimossa!'
+HomeTeleport: '<green>Teletrasportato alla home <white>%home%'
+HomeNotFound: '<red>Home <white>%home% <red>non trovata!'
+HomeLimitReached: '<red>Hai raggiunto il limite massimo di home!'
+NoHomes: '<red>Non hai nessuna home impostata!'
+
+# Warp Messages
+WarpSet: '<green>Warp <white>%warp% <green>impostato!'
+WarpRemoved: '<red>Warp <white>%warp% <red>rimosso!'
+WarpTeleport: '<green>Teletrasportato al warp <white>%warp%'
+WarpNotFound: '<red>Warp <white>%warp% <red>non trovato!'
+NoWarps: '<red>Non ci sono warp disponibili!'
+
+# Spawn Messages
+SpawnSet: '<green>Spawn impostato!'
+SpawnTeleport: '<green>Teletrasportato allo spawn!'
+SpawnNotSet: '<red>Spawn non impostato!'
+
+# Back Messages
+BackTeleport: '<green>Teletrasportato alla posizione precedente!'
+NoBackLocation: '<red>Nessuna posizione precedente registrata!'
+
+# Message Messages
+MessageSent: '<green>Messaggio inviato a <white>%player%'
+MessageReceived: '<#3498db>%playerDisplayName% <dark_gray>→ <white>%message%'
+MessageYourself: '<red>Non puoi inviare messaggi a te stesso!'
+MessageOffline: '<red>Il giocatore è offline!'
+
+# Broadcast
+Broadcast: '<#f39c12>[Annuncio] <white>%message%'
+
+# AFK
+AfkOn: '<yellow>%playerDisplayName% <gray>è ora AFK'
+AfkOff: '<yellow>%playerDisplayName% <gray>non è più AFK'
+
+# Combat
+CombatEnter: '<red>Sei entrato in combattimento!'
+CombatLeave: '<green>Sei uscito dal combattimento!'
+
+# Time
+TimeDay: '<yellow>Impostato a giorno!'
+TimeNight: '<yellow>Impostato a notte!'
+TimeSet: '<yellow>Ora impostata a <white>%time%'
+
+# Weather
+WeatherClear: '<yellow>Tempo impostato a sereno!'
+WeatherRain: '<yellow>Tempo impostato a pioggia!'
+WeatherThunder: '<yellow>Tempo impostato a temporale!'
+
+# Heal
+Heal: '<green>Sei stato curato!'
+HealOther: '<green>Hai curato <white>%player%'
+Feed: '<green>Hai saziato la fame!'
+FeedOther: '<green>Hai saziato <white>%player%'
+
+# Fly
+FlyOn: '<green>Modalità volo attivata!'
+FlyOff: '<green>Modalità volo disattivata!'
+
+# Gamemode
+GamemodeChanged: '<green>Modalità di gioco cambiata in <white>%gamemode%'
+
+# Kit
+KitGiven: '<green>Kit <white>%kit% <green>ricevuto!'
+KitNotFound: '<red>Kit <white>%kit% <red>non trovato!'
+KitCooldown: '<red>Devi aspettare <white>%time% <red>per usare questo kit di nuovo!'
+
+# Ban/Kick
+BanNotify: '<red>%player% <gray>è stato bannato da <white>%bannedBy% <gray>per: <red>%reason%'
+TempBanNotify: '<red>%player% <gray>è stato bannato temporaneamente per <white>%time%'
+UnbanNotify: '<green>%player% <gray>è stato sbannato'
+KickNotify: '<red>%player% <gray>è stato kickato per: <red>%reason%'
+
+# Mute
+MuteNotify: '<red>%player% <gray>è stato mutato per: <red>%reason%'
+UnmuteNotify: '<green>%player% <gray>è stato smutato'
+
+# TPA Timer
+TpaTimeLeft: '<yellow>Richiesta TPA in scadenza tra <white>%seconds% <yellow>secondi'
+TpaTimedOut: '<red>Richiesta TPA scaduta!'
+
+# Back on death
+BackOnDeath: '<yellow>Usa <white>/back <yellow>per tornare al punto di morte'
