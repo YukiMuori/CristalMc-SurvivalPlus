@@ -1,0 +1,136 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axboosters.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+title: '&0&lAxBoosters > &8Inventory (%page%/%pages%)'
+# a gui can have 1-6 rows
+rows: 5
+# page size is used to limit the amount of items on a page
+page-size: 27
+
+# ----- ITEMS -----
+
+# this will be used as the lore of all the boosters
+format:
+- ' '
+- '&#0099FFsᴛᴀᴛs'
+- ' &8❙ &fAudience: &#0099FF%audience%'
+- ' &8❙ &fMultiplier: &#0099FF%multiplier%'
+- ' &8❙ &fLength: &#0099FF%length%'
+- ' &8❙ &fReceived date: &#0099FF%date%'
+- ' '
+- '&#0099FF&l(!) &#0099FFClick here to activate the booster!'
+
+filler:
+  name: ' '
+  slot:
+  - 0-8
+  - 36-44
+  type: LIGHT_BLUE_STAINED_GLASS_PANE
+
+sorting:
+  slot: 3
+  # only the active item will be shown
+  date:
+    material: MAP
+    name: '&#0099FF&lSORTING BY'
+    lore:
+    - ' '
+    - '&#0099FFCurrently selected:'
+    - ' &8❙ &#AAFFAAReceived date'
+    - ' &8❙ &#BBBBBBMultiplier'
+    - ' &8❙ &#BBBBBBAudience'
+    - ' &8❙ &#BBBBBBLength'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick to Change Sorting'
+  multiplier:
+    material: GOLD_INGOT
+    name: '&#0099FF&lSORTING BY'
+    lore:
+    - ' '
+    - '&#0099FFCurrently selected:'
+    - ' &8❙ &#BBBBBBReceived date'
+    - ' &8❙ &#AAFFAAMultiplier'
+    - ' &8❙ &#BBBBBBAudience'
+    - ' &8❙ &#BBBBBBLength'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick to Change Sorting'
+  audience:
+    material: PLAYER_HEAD
+    name: '&#0099FF&lSORTING BY'
+    lore:
+    - ' '
+    - '&#0099FFCurrently selected:'
+    - ' &8❙ &#BBBBBBReceived date'
+    - ' &8❙ &#BBBBBBMultiplier'
+    - ' &8❙ &#AAFFAAAudience'
+    - ' &8❙ &#BBBBBBLength'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick to Change Sorting'
+  length:
+    material: CLOCK
+    name: '&#0099FF&lSORTING BY'
+    lore:
+    - ' '
+    - '&#0099FFCurrently selected:'
+    - ' &8❙ &#BBBBBBReceived date'
+    - ' &8❙ &#BBBBBBMultiplier'
+    - ' &8❙ &#BBBBBBAudience'
+    - ' &8❙ &#AAFFAALength'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick to Change Sorting'
+  actions:
+  - '[SOUND] ui.button.click|1|1'
+
+reverse:
+  slot: 5
+  normal:
+    material: GLOWSTONE_DUST
+    name: '&#0099FF&lREVERSE'
+    lore:
+    - ' '
+    - ' &7- &fCurrently: &#00FF00normal'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick here to reverse!'
+  reversed:
+    material: REDSTONE
+    name: '&#0099FF&lREVERSE'
+    lore:
+    - ' '
+    - ' &7- &fCurrently: &#FF0000reversed'
+    - ' '
+    - '&#0099FF&l(!) &#0099FFClick here to unreverse!'
+  actions:
+  - '[SOUND] ui.button.click|1|1'
+
+back:
+  slot: 40
+  type: BARRIER
+  name: '&#0099FF&lBack'
+  lore:
+  - ' '
+  - '&#0099FF&l(!) &#0099FFClick here to go to the main menu!'
+  actions:
+  - '[MENU] main'
+  - '[SOUND] ui.button.click|1|1'
+
+previous-page:
+  slot: 38
+  type: ARROW
+  name: '&#0099FF&lPrevious Page'
+  lore:
+  - ' '
+  - '&#0099FF&l(!) &#0099FFClick here to go to the previous page!'
+  actions:
+  - '[PAGE] previous'
+  - '[SOUND] ui.button.click|1|1'
+
+next-page:
+  slot: 42
+  type: ARROW
+  name: '&#0099FF&lNext Page'
+  lore:
+  - ' '
+  - '&#0099FF&l(!) &#0099FFClick here to go to the next page!'
+  actions:
+  - '[PAGE] next'
+  - '[SOUND] ui.button.click|1|1'

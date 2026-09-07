@@ -1,0 +1,239 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axgens.html
+
+prefix: '<gradient:#FF7700:#FF9900><b>AxGens</b></gradient> &7» '
+
+database:
+  # options: h2, sqlite
+  type: h2
+
+# the starting generator limit
+# note: the axgens.limit.<AMOUNT> permission will be added on top of this
+# in team mode, this setting is only applied once (not for every member)
+# you can give more with the /axgens slots give <player> <amount> command
+default-max-generators: 5
+
+# the minimum distance between generators
+# set to 0.0 to disable
+generator-min-distance: 0.0
+
+# should generators be put in the player's inventory when broken?
+pickup-to-inv: true
+
+# if true: only the generator's owner and people with the permission axgens.admin will be able to interact with generators
+# if false: everyone who can break blocks at the generator's location will be able to upgrade or pick up the generator
+# you should enable this if aren't using a supported protection plugin
+only-owner-interact: false
+
+# if true: only the generator's owner will be able to pick up a generator, but anyone who can build at the location can upgrade the generator
+# if false: everyone who can build at the location will be able to pick up the generator
+only-owner-pickup: false
+
+# how often should holograms update? in ticks (20 ticks = 1 second)
+# setting this to a low value will increase your network usage
+# requires a restart to change
+hologram-update-speed: 20
+
+# enable sell command
+# /sell <all/hand/handall> or /selldrops <all/hand/handall>
+# this works with all the price hooks
+# requires a restart to change
+sell-command: true
+
+# enable if you want to override another plugin's /sell command
+force-register-sell: false
+
+# enabling this will remove the help from /selldrops and makes it run a sell action if it is used without any arguments
+simple-sell-command:
+  enabled: false
+  # valid options: all, hand, handall
+  action: all
+
+# enable levels
+# if this is true then you will need levels to upgrade or buy generators
+# make sure that the level-plugin is set correctly
+# if you set this to false then you should also remove the placeholders from the other files
+# note: the builtin level system can only be modified with the /axgens levels command
+level-requirements: true
+
+# NOTE: if level-requirements is disabled, this will be ignored
+# if enabled, players will need the required level not only to buy the generators, but also to place them down
+# if disabled, levels will only the used to purchase generators from the generator shop
+require-level-for-placement: false
+
+# should players be able to quickly upgrade generators by shift right clicking on them?
+# if this is false then they must use the GUI
+right-click-upgrading: true
+
+# should the gui upgrading be enabled?
+enable-gui: true
+
+# what should happen if something in the database is different then the block at the generator
+# for example: the server crashes, the world gets rolled back a few minutes, what should axgens do?
+# modes:
+# 1 - force the generator block to match the one in the database
+# 2 - remove the broken generators (this was the default before 1.7.0)
+# 3 - ignore, this can cause a desync of the data (not a big deal, but may annoy users if you have a lot of crashes)
+crash-handling: 1
+
+# the format of the %axgens_nextevent% placeholder
+# 1 - HH:MM:SS, for example 01:25:35
+# 2 - short format, for example 20m
+# 3 - text format, for example 01h 25m 35s
+timer-format: 1
+
+# the metric used in holograms and generator lores
+# note that existing generator items will not be changed automatically
+# 1 - ticks
+# 2 - seconds
+# 3 - milliseconds
+speed-display: 2
+
+number-formatting:
+  # modes:
+  # 0 - formatted (customizable, look at the formatted part)
+  # 1 - short (1K)
+  # 2 - raw (1000.4242421412)
+  mode: 0
+  # https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html
+  formatted: '#,###.##'
+  # format: language_COUNTRY
+  short: en_US
+
+# should items be generated when their owner is offline?
+# note: the chunk must be loaded for generators to work
+offline-generation: true
+
+# if false, all drops are normal items
+# if true, the plugin will add an NBT to generator drops and prevents them from being crafted/placed
+# note that changing this will make old drops unsellable
+prevent-drop-usage: false
+
+# should there be a maximum generator limit that you can't even bypass with permissions?
+# set to -1 to disable this feature
+generator-limit-hard-cap: -1
+
+# the price of generator upgrades
+# %current-price% - the price of the current generator tier
+# %next-price% - the price of the next generator tier
+# you can add math expressions here
+generator-price-calculation: '%next-price% - %current-price%'
+
+# if enabled, every x minutes there is a chance that generators will break and need repair
+# requires a restart to change
+corrupted-generators:
+  enabled: false
+  # should only loaded generators get corrupted?
+  only-if-active: true
+  check-time-minutes: 10
+  # chance of corruption in percentages
+  chance: 10.0
+  # you can add math expressions here
+  repair-price: '%generator-price% / 5'
+  hologram:
+    # should the corrupted hologram be enabled? (can be customized in the messages.yml)
+    enabled: true
+    height: 1.25
+
+# if break mode is enabled, generators will only progress if you start breaking the generator
+# if disabled, they will generate automatically
+# note that you should also change some stuff in the tiers.yml and messages.yml if you want to enable this
+# also when this is enabled, you will have to use shift left click to pick up generators
+break-mode: false
+
+# should placeholderapi placeholders be parsed in item names and lores?
+# note: this will only parse non-player placeholders!
+# so for example %player_name% will not work, however ones like %server_name% will work!
+parse-item-placeholders: true
+
+# should active events be shown in the bossbar?
+# only change this if there are no running events, otherwise you will get errors
+enable-event-bossbars: true
+
+# should drops coming from generators be stacked?
+# this option will randomly choose a generator
+# from the generators on the same y level in the chunk
+# and the drops of all other generators on the same y level
+# in the same chunk will drop their loot at that generator
+# this option is good for performance improvements
+stacked-drops: false
+
+# you must define at least 1 for each
+# requires a restart to change
+command-aliases:
+  main:
+  - axgens
+  - axgen
+  - gens
+  - gen
+  genshop:
+  - axgeneratorshop
+  - axgenshop
+  - genshop
+  - generators
+  - generatorshop
+  mygenerators:
+  - axmygenerators
+  - axmygenerator
+  - axmygens
+  - axmygen
+  - mygenerators
+  - mygens
+  - mygen
+  - mygenerator
+  selldrops:
+  - selldrops
+  - sell
+
+# worlds where you can't place generators
+blacklisted-worlds:
+- example-world
+
+# what kind of generator protections should be enabled?
+# this is needed to protect generators from being broken by game mechanics
+# disabling ones you don't need can improve performance (especially the physics setting)
+# don't disable ones that you don't know what they do as they can lead to generator blocks being dupe-able
+enable-protection:
+  # when a block fades, melts or disappears (example: snow, ice, coral)
+  fade: true
+  # when a block is formed or spreads (example: obsidian, concrete)
+  form: true
+  # when a block is destroyed by a fire (example: woods)
+  burn: true
+  # when an entity changes a block
+  change: true
+  # when a tnt or creeper explodes
+  explode: true
+  # when the block is moved by a piston
+  piston: true
+  # when a block is damaged
+  damage: true
+  # when a block decays (example: leaves)
+  decay: true
+  # when a block grows (example: crops)
+  grow: true
+  # when a block changes due to physics (example: sand, gravel)
+  physics: true
+
+# settings for holograms displays
+holograms:
+  # set to 00000000 to make it invisible
+  # format (hexadecimal): AARRGGBB
+  background-color: 00000000
+  # list: left, right, center
+  alignment: center
+  # list: fixed, vertical, horizontal, center
+  billboard: vertical
+  # should blocks/entities be visible behind the displays?
+  see-through: false
+  # should text have an outline?
+  shadow: true
+
+# should be plugin notify you if there is a new update?
+update-notifier:
+  # if enabled, it will display the message in the console
+  enabled: true
+  # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
+  on-join: true
+
+# do not change this
+version: '27'

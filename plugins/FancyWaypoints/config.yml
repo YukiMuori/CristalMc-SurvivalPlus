@@ -1,0 +1,48 @@
+# Number of waypoints a player can create depending on their rank
+amount_permissions:
+  default:
+    permission: fancywaypoints.default
+    amount: 2
+  
+  vip:
+    permission: fancywaypoints.vip
+    amount: 4
+  
+  staff:
+    permission: fancywaypoints.staff
+    amount: 6
+
+# World configuration
+world_config:
+  enabled: false
+  mode: whitelist
+  list: world1 world2
+
+# Icon lists for waypoints (you can create more custom lists)
+icon_lists:
+  default:
+    enabled_permission: false
+    permission: fancywaypoints.default
+    icons: ⚑, ☖, ✚, ☻, ⚠, ❤
+  
+  vip:
+    enabled_permission: true
+    permission: fancywaypoints.vip
+    icons: ⌛, ✔, ✖, ❉, ✾, ✌, ♼, ✂, ⚐, ☃, ⚠, ♪, ♫, ♯, ♠, ☂, ✎, ✉, ☠, ☢, ☣, ☮, ☯, ✛,
+      ✜, ✟, ☔, ☁, ☞, ☜, ✄, 🗡, 🏹, 🔱, 🧪, ⚗, 🎣, 🛡, 🪓, ⛏, 🔥
+  
+  staff:
+    enabled_permission: true
+    permission: fancywaypoints.staff
+    icons: ☕, ☽, ™, ©, ⚔, ✰, ❇, ✸, ℹ, ✈
+
+# New version message notification
+update_message: true
+
+# Waypoint settings
+waypoint_settings:
+  scale: 1.0
+  background_alpha: 100
+waypoints_settings:
+  scale: 1.0
+  background_alpha: 100

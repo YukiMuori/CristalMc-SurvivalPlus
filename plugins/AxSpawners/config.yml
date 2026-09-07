@@ -1,0 +1,210 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axspawners.html
+
+prefix: '<gradient:#00AAFF:#00CCFF><b>AxSpawners</b></gradient> &7» '
+
+database:
+  # currently only h2 is supported
+  type: h2
+  # don't touch these unless you know what they mean
+  pool:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000
+    keepalive-time: 0
+    connection-timeout: 5000
+
+# format: language_COUNTRY
+# after changing this, the server will download the default item names
+language: en_US
+
+number-formatting:
+  # modes:
+  # 0 - formatted (customizable, look at the formatted part)
+  # 1 - short (1K)
+  # 2 - raw (1000.4242421412)
+  mode: 0
+  # https://docs.oracle.com/javase/tutorial/i18n/format/decimalFormat.html
+  formatted: '#,###.##'
+  # format: language_COUNTRY
+  short: en_US
+
+# used for showing length of boosters
+# 1 - HH:MM:SS, for example 01:25:35
+# 2 - short format, for example 20m
+# 3 - text format, for example 01h 25m 35s
+timer-format: 1
+
+# https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html
+# some examples:
+# - day/month/year (most used) format: dd/MM/yyyy hh:mm:ss
+# - month/day/year (usa) format: MM/dd/yyyy h:mm:ss a
+# - year/month/day (default) format: yyyy/MM/dd hh:mm:ss
+date-format: yyyy/MM/dd HH:mm:ss
+
+# aliases for /axspawners shop
+# requires a restart for changes to apply
+shop-command-aliases:
+- spawnershop
+- axspawnershop
+- boostershop
+
+# aliases for /axspawners myspawners
+# requires a restart for changes to apply
+my-spawners-command-aliases:
+- myspawners
+- axmyspawners
+
+# should items be generated when the owner of the spawner is offline?
+offline-spawning: true
+
+# should the spawner only generate loot when the chunk where the spawner is located is loaded?
+require-chunk-loaded: false
+
+# if true: only the player who placed the spawner and trusted players can do these actions
+# if false: everyone who can build at the spawner's location (managed by the hooks.yml protection plugins) can do these actions on spawners
+only-owner:
+  # selling/taking generated items and xp
+  interact: false
+  # adding spawners to the stack (if false and players add spawners to someone else's spawner, the original owner will not change)
+  add: true
+  # removing spawners (if false, people will be able to steal each other's spawners if they have permission to build)
+  break: true
+
+# the minimum distance between spawners (in blocks)
+# set to 0 to disable
+minimum-distance: 0
+
+# should spawners be put in players' inventory when broken?
+# if false, they will be dropped on the ground
+pickup-to-inventory: true
+
+# when a spawner is broken, and it has items/xp in it, what to do?
+# 0 - drop or collect (might be a bad idea if you have a lot of spawner slots)
+# 1 - sell or collect
+# 2 - delete
+spawner-inventory-break-mode: 1
+
+# starting spawner limit (how many different spawners can be placed?)
+# how the limit is calculated?
+# default + database limit (/axspawners limit) + permission limit (axspawners.limit.<amount>)
+# set to -1 to disable spawner limits
+default-spawner-limit: 5
+
+# starting stack limit (how many spawners can be put together?)
+# how the limit is calculated?
+# default + permission limit (axspawners.stack.<amount>)
+# set to -1 to disable stack limits
+default-stack-limit: 5
+
+# when using loot tables, the plugin has to roll items to get the percentages
+# if you notice the plugin taking a long time to load, try decreasing this
+loot-table-roll-amount: 10000
+
+# should items have a stack count?
+# if enabled, you can store big spawner stacks in your hand without being limited to 64 spawners / slot, for example you can have a 10000x spawner
+# if disabled, you can only have 64 of 1 stack size spawners in your hand at once
+allow-spawner-item-stacking: true
+
+# should spawners require the silk touch enchantment to be broken?
+# if this is enabled and a spawner is broken without silk touch, the spawner item will not drop
+require-silk-touch: false
+
+# if require-silk-touch is enabled, how much chance there should be that the spawner drops when broken? (0-100)
+# 100 will guarantee that all spawner items will drop
+silk-touch-drop-chance: 100
+
+# when using the [drop-items] action in the spawner-gui, how many items should 1 click be able to drop out at once?
+drop-items-max-amount: 576
+
+# list of sounds: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+# set to "" to disable
+sounds:
+  place: ENTITY_EXPERIENCE_ORB_PICKUP
+  pickup: BLOCK_NOTE_BLOCK_HAT
+  boost: ENTITY_EXPERIENCE_ORB_PICKUP
+
+# list of particles: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+# set to "" to disable
+particles:
+  pickup: CRIT
+  place: SPELL
+  upgrade: VILLAGER_HAPPY
+  boost: VILLAGER_HAPPY
+
+# can be used in spawner gui, hologram: %xp-bar%, %slots-bar%
+bar-placeholders:
+  length: 10
+  empty: <color:#DDDDDD>■</color>
+  full: ■
+
+# settings for optimization, don't change these unless you know what they are used for
+cache:
+  # how long should shop prices should be stored per player? (you can increase this if you don't have shop price modifiers, and you don't change prices often)
+  shop-seconds: 60
+
+# how often should players be able to refresh guis?
+# this doesn't impact performance too much, however you should not set it too low
+gui-refresh-cooldown-milliseconds: 100
+
+# what kind of spawners protections should be enabled?
+# this is needed to protect spawners from being broken by game mechanics
+# disabling ones you don't need can improve performance (especially the physics setting)
+# don't disable ones that you don't know what they do as they can lead to spawners blocks being dupe-able
+enable-protection:
+  # when a block fades, melts or disappears (example: snow, ice, coral)
+  fade: true
+  # when a block is formed or spreads (example: obsidian, concrete)
+  form: true
+  # when a block is destroyed by a fire (example: woods)
+  burn: true
+  # when an entity changes a block
+  change: true
+  # when a tnt or creeper explodes
+  explode: true
+  # when the block is moved by a piston
+  piston: true
+  # when a block is damaged
+  damage: true
+  # when a block decays (example: leaves)
+  decay: true
+  # when a block grows (example: crops)
+  grow: true
+  # when a block changes due to physics (example: sand, gravel)
+  physics: true
+
+# settings for holograms displays
+holograms:
+  # set to 00000000 to make it invisible
+  # format (hexadecimal): AARRGGBB
+  background-color: 00000000
+  # list: left, right, center
+  alignment: center
+  # list: fixed, vertical, horizontal, center
+  billboard: vertical
+  # should blocks/entities be visible behind the displays?
+  see-through: false
+  # should text have an outline?
+  shadow: true
+
+# how often should the plugin save spawners to the database?
+# requires a restart to change
+# in minutes
+auto-save-minutes: 3
+
+# worlds where you can't place spawners
+blacklisted-worlds:
+- example-world
+
+# should be plugin notify you if there is a new update?
+update-notifier:
+  # if enabled, it will display the message in the console
+  enabled: true
+  # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
+  on-join: true
+
+# prints information about the plugin
+# this can cause a lot of spam, only use if a developer asks you to
+debug: false
+
+# do not change this
+version: 8

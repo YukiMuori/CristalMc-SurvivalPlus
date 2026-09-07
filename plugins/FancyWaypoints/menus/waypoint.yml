@@ -1,0 +1,98 @@
+title: "Waypoint"
+size: 27
+
+items:
+  change_name:
+    slot: 3
+    material: name_tag
+    name: "&eCurrent name: %waypoint_name%"
+    lore:
+      - ""
+      - "&e[Click to change the name]"
+
+  change_icon:
+    slot: 4
+    material: redstone_torch
+    name: "&eCurrent icon: %waypoint_icon%"
+    lore:
+      - ""
+      - "&e[Click to change the icon]"
+
+  change_color:
+    slot: 5
+    material: orange_dye
+    name: "&eCurrent color: %waypoint_color%█"
+    lore:
+      - ""
+      - "&e[Click to change the color]"
+
+  change_visibility_enable:
+    slot: 12
+    material: player_head
+    texture: "5f67f77f9697255553fa17979cf7242ce7d75dd52fbf3cfb26c9ab54e2a71938"
+    name: "&eWaypoint visibility"
+    lore:
+      - ""
+      - "&a[VISIBLE]"
+      - "&7[Click to toggle]"
+
+  change_visibility_disable:
+    slot: 12
+    material: player_head
+    texture: "4e4b8b8d2362c864e062301487d94d3272a6b570afbf80c2c5b148c954579d46"
+    name: "&eWaypoint visibility"
+    lore:
+      - ""
+      - "&c[INVISIBLE]"
+      - "&7[Click to toggle]"
+
+  change_icon_color:
+    slot: 13
+    material: light_gray_dye
+    name: "&eCurrent icon color: %waypoint_icon%"
+    lore:
+      - ""
+      - "&e[Click to change the icon color]"
+
+  share_waypoint:
+    slot: 14
+    material: ender_eye
+    name: "&eShare the waypoint"
+    lore:
+      - ""
+      - "&e[Click to share the waypoint]"
+
+  delete_waypoint:
+    slot: 22
+    material: barrier
+    name: "&c&l[X]"
+    lore:
+      - ""
+      - "&e[Click to delete the waypoint]"
+
+  change_alpha:
+    slot: 21
+    material: glass
+    name: "#e1c4eeChange background alpha"
+    lore:
+      - ""
+      - "&7Background alpha: &e%waypoint_background_alpha%"
+      - ""
+      - "&e[Left click = +1 | Right click = -1]"
+      - "&e[Shift + Left click = +10 | Shift + Right click = -10]"
+
+  change_scale:
+    slot: 23
+    material: bone_meal
+    name: "#e1c4eeWaypoint scale"
+    lore:
+      - ""
+      - "&7Waypoint scale: &e%waypoint_scale%"
+      - ""
+      - "&e[Left click = +0.1 | Right click = -0.1]"
+
+  fill:
+    slot: "0-52"
+    material: black_stained_glass_pane
+    name: "&c"
+    tooltip: false

@@ -1,0 +1,75 @@
+title: "Waypoints"
+size: 54
+elements_slots: "3-7, 12-16, 21-25, 30-34, 39-43, 48-52"
+
+items:
+  add_waypoint:
+    material: player_head
+    texture: "b056bc1244fcff99344f12aba42ac23fee6ef6e3351d27d273c1572531f"
+    name: "&aAdd"
+    lore:
+      - ""
+      - "&7Add a new waypoint"
+      - "&7 at your current position"
+      - ""
+      - "&a[Click to add]"
+
+  shared_waypoints:
+    slot: 19
+    material: player_head
+    texture: "5d9c43c23074ca538f9e75c685c1cd6d8743f7329f2baec69a23611cfb7224"
+    name: "&eShared waypoints."
+    lore:
+      - ""
+      - "&7[Click to open]"
+
+  global_visibility_enable:
+    slot: 28
+    material: player_head
+    texture: "5f67f77f9697255553fa17979cf7242ce7d75dd52fbf3cfb26c9ab54e2a71938"
+    name: "&eVisibility of all waypoints."
+    lore:
+      - ""
+      - "&a[VISIBLE]"
+      - "&7[Click to toggle]"
+
+  global_visibility_disable:
+    slot: 28
+    material: player_head
+    texture: "4e4b8b8d2362c864e062301487d94d3272a6b570afbf80c2c5b148c954579d46"
+    name: "&eVisibility of all waypoints."
+    lore:
+      - ""
+      - "&c[INVISIBLE]"
+      - "&7[Click to toggle]"
+
+  next_page:
+    slot: 46
+    material: player_head
+    texture: "6b29eceef3ddb14f906dbd4fa41d63f3d7d4537871cee4315c59e76ebc5f85"
+    name: "&eNext page"
+
+  previous_page:
+    slot: 1
+    material: player_head
+    texture: "3e4f2f9698c3f186fe44cc63d2f3c4f9a241223acf0581775d9cecd7075"
+    name: "&ePrevious page"
+
+  fill:
+    slot: "0-52"
+    material: black_stained_glass_pane
+    name: "&c"
+    tooltip: false
+
+  waypoint:
+    material: redstone_torch
+    name: "%waypoint_icon% &f%waypoint_name%"
+    lore:
+      - ""
+      - "&7» &fLocation:"
+      - "&6 | &7%waypoint_x%, %waypoint_y%, %waypoint_z%"
+      - "&6 | &fWorld: &7%waypoint_world%"
+      - ""
+      - "&7» &fColor: &7%waypoint_color%█"
+      - ""
+      - "&7» &fVisible: &7%waypoint_visible%"

@@ -1,0 +1,16 @@
+preset:
+   # The max amount of lines here, is the amount of lines in the themes settings
+   text:
+   - 'Test Tooltip'
+   - 'Price: 500{default/gem}'
+   - '(Click to buy)'
+   # Which theme to use
+   theme: default/three-line
+   # Settings related to how this tooltips is displayed
+   display:
+      # The color of the theme (background)
+      color: white
+   # List of conditions
+   conditions:
+   - op
+   - lookingatblock{type=bedrock}
